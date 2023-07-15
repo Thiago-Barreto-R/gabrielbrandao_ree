@@ -2,6 +2,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --light-color: #fff;
+  --light-bg: #fff;
+  --dark-color: #000;
+  --dark-bg: #000;
 }
 
 ul {
@@ -10,6 +18,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--dark-color);
 }
 
 input {
@@ -19,19 +28,9 @@ input {
 label .sun,
 label .moon {
   display: none;
-}
-
-.dark {
-  background: #000;
-  color: #fff;
-}
-
-.dark .moon {
-  display: none;
-}
-
-.dark .sun {
-  display: inline-block;
+  position: absolute;
+  top: 35px;
+  left: 15px;
 }
 
 .container {
@@ -44,10 +43,18 @@ label .moon {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .container .box {
   max-width: 680px;
   padding: 1rem 2rem;
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+
 .container .box header {
   width: 100%;
   padding: 1rem;
@@ -56,6 +63,7 @@ label .moon {
   display: flex;
   flex-direction: column;
 }
+
 .container .box header .configs {
   display: flex;
   align-items: center;
@@ -64,6 +72,7 @@ label .moon {
 .container .box header .perfil {
   margin-top: 1rem;
 }
+
 .container .box header .btn-models {
   padding: 0.5rem;
   display: flex;
@@ -77,15 +86,20 @@ label .moon {
   border-radius: 50%;
   cursor: pointer;
   transition: 0.5s width ease-in-out, 0.5s height ease-in-out;
+  overflow: hidden;
+  position: relative;
 }
+
 .container .box header .btn-models .model-button {
   display: none;
   padding: 0.5rem 0.8rem;
   border: none;
 }
+
 .container .box header .btn-models:not(.expanded) .dots {
-  display: inline;
+  margin: 0 0 5px 15px;
 }
+
 .container .box header .btn-models.expanded {
   display: flex;
   align-items: center;
@@ -95,14 +109,48 @@ label .moon {
   border-radius: 8px;
   overflow: hidden;
 }
+
 .container .box header .btn-models.expanded label .moon {
   display: block;
 }
+
 .container .box header .btn-models.expanded .dots {
   display: none;
 }
+
 .container .box header .btn-models.expanded .model-button {
   display: inline-block;
+}
+
+.container nav {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.container nav a {
+  background-color: var(--light-bg);
+  padding: .5rem 0;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.dark {
+  background: var(--dark-bg);
+  color: var(--light-color);
+}
+
+.dark .moon {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.dark .sun {
+  display: block;
+}
+
+.dark .container .box header .btn-models  {
+  background-color: var(--dark-bg);
 }
 
 /*# sourceMappingURL=style.css.map */
