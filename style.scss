@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    // color-scheme: light dark;
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    display: none;
+}
+
+label .sun,
+label .moon {
+    display: none;
+}
+
+.dark {
+    background: #000;
+    color: #fff;
+}
+.dark .moon {
+    display: none;
+}
+
+.dark .sun {
+    display: inline-block;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./svg/foto-de-fundo.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .box {
+        max-width: 680px;
+        padding: 1rem 2rem;
+        
+        header {
+            width: 100%;
+            padding: 1rem;
+            position: relative;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            
+            
+            .configs {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .sign-up {
+                
+            }
+
+            .perfil {
+                margin-top: 1rem;
+            }
+
+            .btn-models {
+                padding: .5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                width: 2.1875rem;
+                padding: 0 1rem;
+                height: 2.1875rem;
+                background-color: #fff;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: .5s width ease-in-out, .5s height ease-in-out;
+            }
+
+            .btn-models .model-button {
+                display: none;
+                padding: .5rem .8rem;
+                border: none;
+            }
+            
+            .btn-models:not(.expanded) .dots {
+                display: inline;
+            }
+
+            .btn-models.expanded {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 12.625rem;
+                height: 5.25rem;
+                border-radius: 8px;
+                overflow: hidden;
+
+                & label .moon {
+                    display: block;
+                }
+            }
+
+            .btn-models.expanded .dots {
+                display: none;
+            }
+              
+            .btn-models.expanded .model-button {
+                display: inline-block;
+            }
+        }
+    }
+}
