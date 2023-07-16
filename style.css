@@ -48,11 +48,11 @@ label .moon {
   max-width: 680px;
   padding: 1rem 2rem;
   background: rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 4px );
--webkit-backdrop-filter: blur( 4px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .container .box header {
@@ -71,6 +71,19 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .container .box header .perfil {
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container .box header .perfil .img_perfil {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-image: url('./svg/foto-perfil.svg');
+  background-position: center center;
+  background-size: cover;
 }
 
 .container .box header .btn-models {
