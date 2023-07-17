@@ -12,6 +12,10 @@
   --dark-bg: #000;
 }
 
+.texto {
+  text-transform: uppercase;
+}
+
 ul {
   list-style: none;
 }
