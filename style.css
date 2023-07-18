@@ -33,19 +33,35 @@ label .sun,
 label .moon {
   display: none;
   position: absolute;
-  top: 35px;
+  top: 40px;
   left: 15px;
+}
+
+.active-language {
+  color: #00a037;
+  border-radius: 82px;
+  background: #ebeef1;
+  box-shadow:  0px 0px 10px 0px rgba(10, 99, 169, .16),
+               -5px -5px 10px -1px rgba(255, 255, 255, .70);
+}
+
+.reject-language {
+  border-radius: 82px;
+  background: #ebeef1;
+  box-shadow: inset 0px 0px 10px 0px rgba(10, 99, 169, .16),
+              inset -5px -5px 10px -1px rgba(255, 255, 255, .70);;
 }
 
 .container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-image: url("./svg/foto-de-fundo.svg");
   background-size: cover;
   background-repeat: no-repeat;
+  padding: .8rem .5rem;
 }
 
 .container .box {
@@ -72,22 +88,7 @@ label .moon {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.container .box header .perfil {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.container .box header .perfil .img_perfil {
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  background-image: url('./svg/foto-perfil.svg');
-  background-position: center center;
-  background-size: cover;
+  position: relative;
 }
 
 .container .box header .btn-models {
@@ -97,34 +98,50 @@ label .moon {
   justify-content: center;
   gap: 1rem;
   width: 2.1875rem;
-  padding: 0 1rem;
   height: 2.1875rem;
   background-color: #fff;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.5s width ease-in-out, 0.5s height ease-in-out;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  top: -20px;
+  left: -15px;
+  z-index: 10;
 }
 
 .container .box header .btn-models .model-button {
   display: none;
-  padding: 0.5rem 0.8rem;
+  padding: .5rem .8rem;
   border: none;
+  border-radius: 8px;
+  border-radius: 82px;
 }
 
 .container .box header .btn-models:not(.expanded) .dots {
   margin: 0 0 5px 15px;
 }
 
+.container .box header .btn-models:not(.expanded) .sun,
+.container .box header .btn-models:not(.expanded) .moon,
+.container .box header .btn-models:not(.expanded) .close {
+  display: none;
+}
+
 .container .box header .btn-models.expanded {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 12.625rem;
-  height: 5.25rem;
+  width: 12rem;
+  height: 6.25rem;
   border-radius: 8px;
   overflow: hidden;
+}
+
+.container .box header .btn-models.expanded .close {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .container .box header .btn-models.expanded label .moon {
@@ -139,6 +156,47 @@ label .moon {
   display: inline-block;
 }
 
+.container .box header .sign-up {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.container .box header .perfil {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container .box header .perfil .img_perfil {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-image: url('./svg/foto-perfil.svg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.container .box header .perfil a {
+  font-size: 1.1rem;
+}
+
+.container .box header .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.container .box header .links img {
+  height: 25px;
+  width: 25px;
+}
+
+
 .container nav {
   display: flex;
   gap: 1rem;
@@ -147,7 +205,7 @@ label .moon {
 
 .container nav a {
   background-color: var(--light-bg);
-  padding: .5rem 0;
+  padding: .6rem 2.6rem;
   text-align: center;
   border-radius: 6px;
 }
@@ -170,4 +228,8 @@ label .moon {
   background-color: var(--dark-bg);
 }
 
+.dark .container nav a {
+  background-color: var(--dark-bg);
+  color: var(--light-color);
+}
 /*# sourceMappingURL=style.css.map */

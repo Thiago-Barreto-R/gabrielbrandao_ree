@@ -1,8 +1,12 @@
-var btnExpand = document.getElementById('btn-expand');
-var btnModels = document.querySelector('.btn-models');
+var btnModels = document.getElementById('btn-expand');
+var btnClose = document.getElementById('close');
 
-btnExpand.addEventListener('click', function() {
-  btnModels.classList.toggle('expanded');
+btnModels.addEventListener('click', function(event) {
+    if (event.target === btnClose) {
+        btnModels.classList.remove('expanded');
+    } else {
+        btnModels.classList.add('expanded');
+    }
 })
 
 function translateText(sourceLang, targetLang) {
@@ -51,7 +55,6 @@ function translateText(sourceLang, targetLang) {
 translateText('en', 'pt')
 
 const changeThemeBtn = document.querySelector('#theme')
-console.log(changeThemeBtn)
 
 function toggleDarkMode() {
     document.body.classList.toggle("dark")
@@ -75,3 +78,22 @@ changeThemeBtn.addEventListener('change', function() {
         localStorage.setItem("dark", 1)
     }
 })
+
+function changeActiveButton(button) {
+  var buttons = document.querySelectorAll(".model-button");
+  buttons.forEach(function(btn) {
+      if (btn === button) {
+          btn.classList.add("active-language");
+          btn.classList.remove("reject-language");
+      } else {
+          btn.classList.remove("active-language");
+          btn.classList.add("reject-language");
+      }
+  });
+}
+
+// Adicionar classe "active-language" ao botão "Br" ao carregar a página
+window.onload = function() {
+  var brButton = document.getElementById("brButton");
+  changeActiveButton(brButton);
+};
