@@ -72,3 +72,34 @@ document.getElementById('openModalLink').addEventListener('click', function(even
 document.getElementById('closeModalButton').addEventListener('click', function() {
   document.getElementById('playlistModal').style.display = 'none'
 });
+
+const links = document.querySelectorAll('.shake-links');
+
+function animateLinks(index) {
+    const currentIndex = index % links.length;
+    const nextIndex = (index + 1) % links.length;
+
+    links[currentIndex].style.animation = 'shake 0.5s ease-in-out';
+
+    // Remover a animação após o término
+    links[currentIndex].addEventListener('animationend', () => {
+        links[currentIndex].style.animation = '';
+    });
+
+    setTimeout(() => {
+        animateLinks(nextIndex);
+    }, 1500);
+}
+
+animateLinks(0);
+
+const pointer = document.querySelector('.pointer');
+
+        function clickAnimation() {
+            pointer.style.top = '5px';
+            setTimeout(() => {
+                pointer.style.top = '30px';
+            }, 500);
+        }
+
+        setInterval(clickAnimation, 3000);
