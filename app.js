@@ -1,12 +1,7 @@
-var btnModels = document.getElementById('btn-expand');
-var btnClose = document.getElementById('close');
+let btnModels = document.getElementById('btn-expand')
 
-btnModels.addEventListener('click', function(event) {
-    if (event.target === btnClose) {
-        btnModels.classList.remove('expanded');
-    } else {
-        btnModels.classList.add('expanded');
-    }
+btnModels.addEventListener('click', () => {
+  btnModels.classList.toggle('expanded')
 })
 
 function translateText(sourceLang, targetLang) {
@@ -15,8 +10,6 @@ function translateText(sourceLang, targetLang) {
     const translateElement = (element) => {
       const textToTranslate = element.innerHTML;
   
-      // Check if the text to translate should be skipped
-      // Verifique se o texto a traduzir deve ser ignorado
       if (shouldSkipTranslation(textToTranslate)) {
         return;
       }
@@ -80,7 +73,7 @@ changeThemeBtn.addEventListener('change', function() {
 })
 
 function changeActiveButton(button) {
-  var buttons = document.querySelectorAll(".model-button");
+  let buttons = document.querySelectorAll(".model-button");
   buttons.forEach(function(btn) {
       if (btn === button) {
           btn.classList.add("active-language");
@@ -91,9 +84,7 @@ function changeActiveButton(button) {
       }
   });
 }
-
-// Adicionar classe "active-language" ao botão "Br" ao carregar a página
 window.onload = function() {
-  var brButton = document.getElementById("brButton");
+  let brButton = document.getElementById("brButton");
   changeActiveButton(brButton);
 };

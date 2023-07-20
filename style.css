@@ -25,31 +25,21 @@ a {
   color: var(--dark-color);
 }
 
-input {
-  display: none;
-}
-
-label .sun,
-label .moon {
-  display: none;
-  position: absolute;
-  top: 40px;
-  left: 15px;
+button {
+  background: transparent;
 }
 
 .active-language {
-  color: #00a037;
-  border-radius: 82px;
-  background: #ebeef1;
-  box-shadow:  0px 0px 10px 0px rgba(10, 99, 169, .16),
-               -5px -5px 10px -1px rgba(255, 255, 255, .70);
+  color: #fff;
+  border-radius: 8px;
+  background: #000;
+  position: relative;
 }
 
 .reject-language {
-  border-radius: 82px;
-  background: #ebeef1;
-  box-shadow: inset 0px 0px 10px 0px rgba(10, 99, 169, .16),
-              inset -5px -5px 10px -1px rgba(255, 255, 255, .70);;
+  border-radius: 8px;
+  background: transparent;
+  color: #000;
 }
 
 .container {
@@ -115,16 +105,13 @@ label .moon {
   padding: .5rem .8rem;
   border: none;
   border-radius: 8px;
-  border-radius: 82px;
 }
 
 .container .box header .btn-models:not(.expanded) .dots {
-  margin: 0 0 5px 15px;
+  margin: 0 0 6px 0px;
 }
 
-.container .box header .btn-models:not(.expanded) .sun,
-.container .box header .btn-models:not(.expanded) .moon,
-.container .box header .btn-models:not(.expanded) .close {
+.container .box header .btn-models:not(.expanded) .mark {
   display: none;
 }
 
@@ -132,20 +119,10 @@ label .moon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 12rem;
-  height: 6.25rem;
+  width: 10rem;
+  height: 4.25rem;
   border-radius: 8px;
   overflow: hidden;
-}
-
-.container .box header .btn-models.expanded .close {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-.container .box header .btn-models.expanded label .moon {
-  display: block;
 }
 
 .container .box header .btn-models.expanded .dots {
@@ -154,6 +131,13 @@ label .moon {
 
 .container .box header .btn-models.expanded .model-button {
   display: inline-block;
+}
+
+.container .box header .btn-models.expanded .active-language::after {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: red;
 }
 
 .container .box header .sign-up {
@@ -175,7 +159,7 @@ label .moon {
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  background-image: url('./svg/foto-perfil.svg');
+  background-image: url('./svg/photo-profile.svg');
   background-position: center center;
   background-size: cover;
 }
@@ -209,27 +193,3 @@ label .moon {
   text-align: center;
   border-radius: 6px;
 }
-
-.dark {
-  background: var(--dark-bg);
-  color: var(--light-color);
-}
-
-.dark .moon {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.dark .sun {
-  display: block;
-}
-
-.dark .container .box header .btn-models  {
-  background-color: var(--dark-bg);
-}
-
-.dark .container nav a {
-  background-color: var(--dark-bg);
-  color: var(--light-color);
-}
-/*# sourceMappingURL=style.css.map */
