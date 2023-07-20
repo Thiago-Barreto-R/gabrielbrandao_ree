@@ -40,16 +40,45 @@
                 </div>
             </header>
             <nav>
-                <a href="#" class="texto">Treinos do dia a dia</a>
+                <a href="#" class="texto">Treinos diários</a>
                 <a href="#" class="texto">Dicas de Treinos</a>
                 <a href="#" class="texto">Dietas</a>
                 <a href="#" class="texto">Suplementos</a>
-                <a href="#" class="texto">SPOTIFY PLAYLISTS</a>
+                <a href="#" class="texto" id="openModalLink">SPOTIFY PLAYLISTS</a>
                 <a href="#" class="texto">Roupas de treino</a>
             </nav>
         </section>
+
     </main>
 
+        <!-- Modal PLAYLIST -->
+        <div class="modal" id="playlistModal">
+        <div class="modal-content">
+            <!-- Aqui você pode inserir o conteúdo das playlists -->
+            <h2 class="texto">Minhas Playlists</h2>
+            <ul>
+            <li class="texto">Playlist 1</li>
+            <li class="texto">Playlist 2</li>
+            <li class="texto">Playlist 3</li>
+            <!-- Adicione suas playlists aqui -->
+            </ul>
+            <button 
+                class="close"
+                id="closeModalButton"
+            >
+                <i data-lucide="x" class="x"></i>
+            </button>
+        </div>
+        </div>
+
     <script src="app.js"></script>
+    <!-- Development version -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Production version -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

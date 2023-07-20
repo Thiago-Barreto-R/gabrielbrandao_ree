@@ -47,31 +47,6 @@ function translateText(sourceLang, targetLang) {
   
 translateText('en', 'pt')
 
-const changeThemeBtn = document.querySelector('#theme')
-
-function toggleDarkMode() {
-    document.body.classList.toggle("dark")
-}
-
-function loadTheme() {
-    const darkMode = localStorage.getItem("dark")
-    if(darkMode){
-        toggleDarkMode()
-    }
-}
-
-loadTheme();
-
-changeThemeBtn.addEventListener('change', function() {
-    toggleDarkMode()
-
-    localStorage.removeItem("dark")
-
-    if(document.body.classList.contains("dark")) {
-        localStorage.setItem("dark", 1)
-    }
-})
-
 function changeActiveButton(button) {
   let buttons = document.querySelectorAll(".model-button");
   buttons.forEach(function(btn) {
@@ -87,4 +62,13 @@ function changeActiveButton(button) {
 window.onload = function() {
   let brButton = document.getElementById("brButton");
   changeActiveButton(brButton);
-};
+}
+
+document.getElementById('openModalLink').addEventListener('click', function(event) {
+  event.preventDefault()
+  document.getElementById('playlistModal').style.display = 'block'
+})
+
+document.getElementById('closeModalButton').addEventListener('click', function() {
+  document.getElementById('playlistModal').style.display = 'none'
+});
